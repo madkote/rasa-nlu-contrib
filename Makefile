@@ -36,6 +36,7 @@ clean-build:
 	rm --force --recursive dist/
 	rm --force --recursive *.egg-info
 	rm --force --recursive .pytest_cache/
+	rm --force --recursive demo_models/
 
 clean-pycache:
 	@echo $@
