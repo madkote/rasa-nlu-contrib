@@ -1,0 +1,2 @@
+-r requirements_bare.txt
+git+https://github.com/mit-nlp/MITIE.git#egg=mitie

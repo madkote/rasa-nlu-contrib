@@ -1,0 +1,4 @@
+-r requirements_bare.txt
+tensorflow==1.13.*
+scipy==1.2.*
+sklearn-crfsuite==0.3.*
