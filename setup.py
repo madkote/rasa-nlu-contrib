@@ -88,56 +88,56 @@ DESCRIPTION = 'Rasa NLU engine backported from main Rasa project'
 URL = 'https://github.com/madkote/%s' % NAME
 
 REQUIRES_INSTALL = [
-    'cloudpickle==0.6.*',
-    'coloredlogs==10.*',
-    'future==0.17.*',
-    'gevent==1.3.*',
-    'hyperlink==17.3.*',
-    'jsonschema==2.6.*',
-    'klein==17.10.*',
-    'matplotlib==2.2.*',
-    'numpy==1.16.*',
-    'packaging==18.*',
-    'requests==2.20.*',
-    'ruamel.yaml==0.15.*',
-    'scikit-learn==0.20.*',
-    'simplejson==3.13.*',
-    'six==1.11.*',
-    'tqdm==4.19.*',
-    'typing==3.6.*'
+    'cloudpickle~=0.6.1',
+    'coloredlogs~=10.0',
+    'future~=0.17.1',
+    'gevent~=1.3.7',
+    'hyperlink~=17.3.1',
+    'jsonschema~=2.6.0',
+    'klein~=17.10.0',
+    'matplotlib~=2.2.5',
+    'numpy~=1.16.6',
+    'packaging~=18.0',
+    'requests~=2.20.1',
+    'ruamel.yaml~=0.15.100',
+    'scikit-learn~=0.20.4',
+    'simplejson~=3.13.2',
+    'six~=1.11.0',
+    'tqdm~=4.19.9',
+    'typing~=3.6.6'
 ]
 REQUIRES_DUCKLING = [
-    'duckling==1.8.0',
-    'Jpype1==0.6.2'
+    'duckling~=1.8.0',
+    'Jpype1~=0.6.2'
 ]
 REQUIRES_MITIE = [
-    'mitie==0.7.0',
+    'mitie~=0.7.0',
 ]
 REQUIRES_SPACY = [
-    'spacy==2.0.*',
-    'scipy==1.2.*',
-    'sklearn-crfsuite==0.3.*'
+    'spacy~=2.0.18',
+    'scipy~=1.2.3',
+    'sklearn-crfsuite~=0.3.6'
 ]
 REQUIRES_TENSORFLOW = [
-    'tensorflow==1.13.*',
-    'scipy==1.2.*',
-    'sklearn-crfsuite==0.3.*'
+    'tensorflow~=1.13.2',
+    'scipy~=1.2.3',
+    'sklearn-crfsuite~=0.3.6'
 ]
 REQUIRES_TESTS = [
-    'bandit==1.7.*',
-    'docker-compose==1.28.*',
-    'flake8==3.8.*',
-    'httpretty==0.9.*',
-    'mock==2.0.*',
-    'moto==1.3.*',
-    'python-coveralls==2.9.*',
-    'pytest==3.3.*',
-    'pytest-pycodestyle==1.4.*',
-    'pytest-cov==2.5.*',
+    'bandit~=1.7.0',
+    'docker-compose~=1.28.0',
+    'flake8~=3.8.4',
+    'httpretty~=0.9.7',
+    'mock~=2.0.0',
+    'moto~=1.3.16',
+    'python-coveralls~=2.9.3',
+    'pytest~=3.3.2',
+    'pytest-pycodestyle~=1.4.1',
+    'pytest-cov~=2.5.1',
     'pytest-twisted<1.6',
-    'responses==0.9.*',
-    'tox==3.21.*',
-    'treq==17.8.*'
+    'responses~=0.9.0',
+    'tox~=3.21.2',
+    'treq~=17.8.0'
 ]
 REQUIRES_ZH = [
     'jieba==0.39'

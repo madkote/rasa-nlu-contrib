@@ -27,6 +27,7 @@ clean-pyc:
 	find . -name '*.pyc' -exec rm --force {} +
 	find . -name '*.pyo' -exec rm --force {} +
 	find . -name '*~'    -exec rm --force {} +
+	find . -name '.coverage*' -exec rm --force {} +
 
 clean-build:
 	@echo $@
@@ -44,8 +45,12 @@ clean: clean-build clean-pyc clean-pycache
 
 install: clean
 	@echo $@
+	pip install --no-cache-dir -U pip
 	pip install --no-cache-dir -U -r requirements.txt
+	# curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+	# python get-pip.py --force-reinstall
 	python -m spacy download en
+	# rm -f get-pip.py
 
 demo: clean
 	@echo $@
