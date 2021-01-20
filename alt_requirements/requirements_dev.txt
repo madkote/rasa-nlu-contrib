@@ -1,21 +1,21 @@
 -r requirements_full.txt
 
-bandit~=1.7.0
-docker-compose~=1.28.0
-flake8~=3.8.4
-httpretty~=0.9.7
-mock~=2.0.0
-moto~=1.3.16
-python-coveralls~=2.9.3
-pytest~=3.3.2
-pytest-pycodestyle~=1.4.1
-pytest-cov~=2.5.1
-pytest-twisted<1.6
-responses~=0.9.0
-tox~=3.21.2
-treq~=17.8.0
+bandit==1.7.0
+docker-compose==1.28.0
+flake8==3.8.4
+httpretty==0.9.5
+mock==2.0.0
+moto==1.3.8
+python-coveralls==2.9.1
+pytest==3.2.5
+pytest-pycodestyle==1.4.0
+pytest-cov==2.5.1
+pytest-twisted==1.6
+responses==0.9.0
+tox==3.21.0
+treq==17.8.0
 
 
-google-cloud-storage~=1.7.0
-azure-storage-blob~=1.0.0
-boto3~=1.9.253
+google-cloud-storage==1.7.0
+azure-storage-blob==1.0.0
+boto3==1.9.96

@@ -4,8 +4,8 @@
 -r requirements_pretrained_embeddings_mitie.txt
 
 # duckling
-duckling~=1.8.0
-Jpype1~=0.6.2
+duckling==1.8.0
+Jpype1==0.6.2
 
 # chinise
 jieba==0.39

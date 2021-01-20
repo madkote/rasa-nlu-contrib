@@ -1,4 +1,4 @@
 -r requirements_bare.txt
-tensorflow~=1.13.2
-scipy~=1.2.2
-sklearn-crfsuite~=0.3.6
+tensorflow==1.13.1
+scipy==1.2.0
+sklearn-crfsuite==0.3.6

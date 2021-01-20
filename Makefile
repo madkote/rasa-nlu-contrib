@@ -47,10 +47,7 @@ install: clean
 	@echo $@
 	pip install --no-cache-dir -U pip
 	pip install --no-cache-dir -U -r requirements.txt
-	# curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-	# python get-pip.py --force-reinstall
 	python -m spacy download en
-	# rm -f get-pip.py
 
 demo: clean
 	@echo $@
@@ -67,7 +64,6 @@ bandit: clean
 test-unit: clean flake bandit
 	@echo $@
 	time python -m pytest -v -x tests/ --cov=rasa_nlu
-	https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
 
 test-tox: clean
 	@echo $@
