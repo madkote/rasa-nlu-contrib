@@ -105,6 +105,10 @@ pypi-version:
 	@echo "VERSION=$(shell python -c 'import rasa_nlu;print(rasa_nlu.__version__)')" > ENV
 	# sed -i "s/^VERSION=.*/VERSION=$(shell python -c 'import rasa_nlu;print(rasa_nlu.__version__)')/" ENV
 
+docker-push: clean pypi-version
+	@echo $@
+	docker-compose --env-file ENV push
+
 docker-build: clean pypi-version
 	@echo $@
 	DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker-compose --env-file ENV build --force-rm --no-cache --pull --progress=auto
