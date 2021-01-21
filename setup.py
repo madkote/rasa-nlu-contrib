@@ -152,7 +152,7 @@ REQUIRES_EXTRA = {
     'zh': REQUIRES_ZH
 }
 
-PACKAGES = find_packages(exclude=('scripts', 'tests'))
+PACKAGES = find_packages(exclude=('scripts', 'tests*'))
 PACKAGE_DATA = {}
 
 
