@@ -52,7 +52,11 @@ install: clean
 
 demo: clean
 	@echo $@
-	python demo.py
+	python demo.py api
+
+demo-http: clean
+	@echo $@
+	python demo.py http
 
 flake: clean
 	@echo $@
