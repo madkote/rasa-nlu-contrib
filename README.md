@@ -38,9 +38,23 @@ Rasa then uses machine learning to pick up patterns and generalise to unseen sen
 You can think of Rasa NLU as a set of high level APIs for building your own language parser using existing NLP and ML libraries.
 
 ## Installation
+* Minimal `pip install rasa-nlu-contrib`
+* Full `pip install rasa-nlu-contrib[all]`
+  - server
+  - spacy
+  - tensorflow
+* HTTP server `pip install rasa-nlu-contrib[server]`
+* Spacy `pip install rasa-nlu-contrib[spacy]`
+* Tensorflow `pip install rasa-nlu-contrib[tensorflow]`
+* Chinise `pip install rasa-nlu-contrib[zh]`
+* Duckling `pip install rasa-nlu-contrib[duckling]`
+* Mitie `pip install rasa-nlu-contrib[mitie]`
+
+Full list for copy-and-paste:
 ```
 pip install rasa-nlu-contrib
 pip install rasa-nlu-contrib[all]
+pip install rasa-nlu-contrib[server]
 pip install rasa-nlu-contrib[spacy]
 pip install rasa-nlu-contrib[tensorflow]
 pip install rasa-nlu-contrib[zh]
@@ -56,35 +70,35 @@ For details see [legacy documentation](https://legacy-docs.rasa.com/docs/nlu/).
 
 ### Python API
 ```python
-	import os
-	import pprint
-	
-	from rasa_nlu.model import Interpreter
-	from rasa_nlu.train import train
-	
-	model_name = 'nlu'
-	project_name = 'project_demo'
-	
-	here = os.path.abspath(os.path.dirname(__file__))
-	path_config = os.path.join(here, 'sample_configs', 'config_supervised_embeddings.yml')  # noqa E501
-	path_data = os.path.join(here, 'data', 'examples', 'rasa', 'demo-rasa.md')
-	path_models = os.path.join(here, 'demo_models')
-	
-	trainer, interpreter, persisted_path = train(  # @UnusedVariable
-	    path_config,
-	    path_data,
-	    path=path_models,
-	    project=project_name,
-	    fixed_model_name=model_name
-	)
-	message = "let's see some italian restaurants"
-	result = interpreter.parse(message)
-	pprint.pprint(result)
-	
-	interpreter = Interpreter.load(os.path.join(path_models, project_name, model_name))  # noqa E501
-	message = "let's see some italian restaurants"
-	result = interpreter.parse(message)
-	pprint.pprint(result)
+import os
+import pprint
+
+from rasa_nlu.model import Interpreter
+from rasa_nlu.train import train
+
+model_name = 'nlu'
+project_name = 'project_demo'
+
+here = os.path.abspath(os.path.dirname(__file__))
+path_config = os.path.join(here, 'sample_configs', 'config_supervised_embeddings.yml')  # noqa E501
+path_data = os.path.join(here, 'data', 'examples', 'rasa', 'demo-rasa.md')
+path_models = os.path.join(here, 'demo_models')
+
+trainer, interpreter, persisted_path = train(  # @UnusedVariable
+    path_config,
+    path_data,
+    path=path_models,
+    project=project_name,
+    fixed_model_name=model_name
+)
+message = "let's see some italian restaurants"
+result = interpreter.parse(message)
+pprint.pprint(result)
+
+interpreter = Interpreter.load(os.path.join(path_models, project_name, model_name))  # noqa E501
+message = "let's see some italian restaurants"
+result = interpreter.parse(message)
+pprint.pprint(result)
 ```
 
 ### HTTP API

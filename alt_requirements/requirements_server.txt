@@ -1,0 +1,3 @@
+-r requirements_bare.txt
+hyperlink==17.3.1
+klein==17.10.0

@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   rasa-nlu-contrib:
-    image: madkote/rasa_nlu_contrib:latest
+    image: madkote/rasa_nlu_contrib:${VERSION}
     networks: ['rasa-contrib-network']
     ports:
       - "5000:5000"
@@ -14,6 +14,8 @@ services:
       context: .
       target: prod
       dockerfile: Dockerfile
+      args:
+        VERSION: ${VERSION}
   duckling:
     image: rasa/duckling:latest
     networks: ['rasa-contrib-network']

@@ -1,4 +1,5 @@
 -r requirements_bare.txt
+-r requirements_server.txt
 -r requirements_pretrained_embeddings_spacy.txt
 -r requirements_supervised_embeddings.txt
 -r requirements_pretrained_embeddings_mitie.txt

@@ -19,7 +19,6 @@ import os
 import pprint
 
 from rasa_nlu.model import Interpreter
-from rasa_nlu.server import main as main_server
 from rasa_nlu.train import train
 
 from rasa_nlu.version import __version__
@@ -63,6 +62,10 @@ def demo_python_api(verbose=False):
 
 
 def demo_http_api():
+    try:
+        from rasa_nlu.server import main as main_server
+    except ModuleNotFoundError:
+        raise RuntimeError('server dependencies are not installed')
     demo_python_api(verbose=True)
     args = argparse.Namespace(
         path=path_models,

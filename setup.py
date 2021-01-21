@@ -91,10 +91,7 @@ REQUIRES_INSTALL = [
     'cloudpickle~=0.6.1',
     'coloredlogs~=10.0',
     'future~=0.17.1',
-    'gevent~=1.3.6',
-    'hyperlink~=17.3.1',
     'jsonschema~=2.6.0',
-    'klein~=17.10.0',
     'matplotlib~=2.2.4',
     'numpy~=1.16.0',
     'packaging~=18.0',
@@ -112,6 +109,10 @@ REQUIRES_DUCKLING = [
 ]
 REQUIRES_MITIE = [
     'mitie==0.7.0',
+]
+REQUIRES_SERVER = [
+    'hyperlink~=17.3.1',
+    'klein~=17.10.0'
 ]
 REQUIRES_SPACY = [
     'spacy~=2.0.18,>2.0',
@@ -136,19 +137,20 @@ REQUIRES_TESTS = [
     'pytest-cov~=2.5.1',
     'pytest-twisted<1.6',
     'responses~=0.9.0',
-    'tox~=3.21.0',
+    # 'tox~=3.21.0',  # TODO: currently ignored due to issues with SIX
     'treq~=17.8.0'
 ]
 REQUIRES_ZH = [
     'jieba==0.39'
 ]
 REQUIRES_EXTRA = {
-    'all': REQUIRES_SPACY + REQUIRES_TENSORFLOW,
+    'all': REQUIRES_SERVER + REQUIRES_SPACY + REQUIRES_TENSORFLOW,
     'duckling': REQUIRES_DUCKLING,
     'mitie': REQUIRES_MITIE,
+    'server': REQUIRES_SERVER,
     'spacy': REQUIRES_SPACY,
     'tensorflow': REQUIRES_TENSORFLOW,
-    'test': REQUIRES_TESTS,
+    'test': REQUIRES_SERVER + REQUIRES_TESTS,
     'zh': REQUIRES_ZH
 }
 

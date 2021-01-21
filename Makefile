@@ -100,11 +100,20 @@ pypi-upload: pypi-deps
 	@echo $@
 	python -m twine upload dist/*
 
-docker-build: clean
-	@echo $@
-	DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build --force-rm --no-cache --pull --progress=auto
+pypi-version:
+	rm -f ENV
+	@echo "VERSION=$(shell python -c 'import rasa_nlu;print(rasa_nlu.__version__)')" > ENV
+	# sed -i "s/^VERSION=.*/VERSION=$(shell python -c 'import rasa_nlu;print(rasa_nlu.__version__)')/" ENV
 
-docker-up: demo
+docker-build: clean pypi-version
+	@echo $@
+	DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker-compose --env-file ENV build --force-rm --no-cache --pull --progress=auto
+
+docker-build-dev: clean pypi-version
+	@echo $@
+	DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 docker-compose --env-file ENV build --progress=auto	
+
+docker-up: demo pypi-version
 	@echo $@
 	rm -rf rasa-nlu-contrib-app-data/projects
 	mkdir -p rasa-nlu-contrib-app-data/data
