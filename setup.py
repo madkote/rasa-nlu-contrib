@@ -37,7 +37,7 @@ with open('README.md', 'r') as fh:
 with open('CHANGES.md', 'r') as fh:
     changes_description = fh.read()
 
-with open('LICENCE', 'r') as fh:
+with open('LICENSE', 'r') as fh:
     licence_description = fh.read()
 
 with open('NOTICE', 'r') as fh:
@@ -82,7 +82,7 @@ def load_requirements(filename):
 
 
 NAME = 'rasa-nlu-contrib'
-NAME_PACKAGE = NAME.replace('-', '_')
+NAME_PACKAGE = NAME.replace('-', '_').replace('_contrib', '')
 VERSION = get_version(NAME_PACKAGE)
 DESCRIPTION = 'Rasa NLU engine backported from main Rasa project'
 URL = 'https://github.com/madkote/%s' % NAME
