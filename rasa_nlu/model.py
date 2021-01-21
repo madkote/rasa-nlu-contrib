@@ -137,8 +137,8 @@ class Trainer(object):
         # type: Optional[TrainingData]
 
         if component_builder is None:
-            # If no builder is passed, every interpreter creation will result in
-            # a new builder. hence, no components are reused.
+            # If no builder is passed, every interpreter creation will result
+            # in a new builder. hence, no components are reused.
             component_builder = components.ComponentBuilder()
 
         # Before instantiating the component classes, lets check if all
@@ -150,10 +150,13 @@ class Trainer(object):
         self.pipeline = self._build_pipeline(cfg, component_builder)
 
     @staticmethod
-    def _build_pipeline(cfg: RasaNLUModelConfig,
-                        component_builder: ComponentBuilder
-                        ) -> List[Component]:
-        """Transform the passed names of the pipeline components into classes"""
+    def _build_pipeline(
+            cfg: RasaNLUModelConfig,
+            component_builder: ComponentBuilder
+    ) -> List[Component]:
+        """
+        Transform the passed names of the pipeline components into classes
+        """
         pipeline = []
 
         # Transform the passed names of the pipeline components into classes
@@ -304,11 +307,14 @@ class Interpreter(object):
                                   skip_validation)
 
     @staticmethod
-    def create(model_metadata: Metadata,
-               component_builder: Optional[ComponentBuilder] = None,
-               skip_validation: bool = False
-               ) -> 'Interpreter':
-        """Load stored model and components defined by the provided metadata."""
+    def create(
+            model_metadata: Metadata,
+            component_builder: Optional[ComponentBuilder] = None,
+            skip_validation: bool = False
+    ) -> 'Interpreter':
+        """
+        Load stored model and components defined by the provided metadata.
+        """
 
         context = {}
 

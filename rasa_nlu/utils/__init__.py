@@ -432,7 +432,7 @@ AvailableEndpoints = namedtuple('AvailableEndpoints', 'model data')
 class EndpointConfig(object):
     """Configuration for an external HTTP endpoint."""
 
-    def __init__(self,
+    def __init__(self,  # nosec B107
                  url: Text,
                  params: Dict[Text, Any] = None,
                  headers: Dict[Text, Any] = None,

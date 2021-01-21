@@ -2,7 +2,7 @@ import io
 import logging
 import numpy as np
 import os
-import pickle
+import pickle  # nosec B403
 import typing
 from tqdm import tqdm
 from typing import Any, Dict, List, Optional, Text, Tuple
@@ -691,11 +691,11 @@ class EmbeddingIntentClassifier(Component):
             with io.open(os.path.join(
                     model_dir,
                     file_name + "_inv_intent_dict.pkl"), 'rb') as f:
-                inv_intent_dict = pickle.load(f)
+                inv_intent_dict = pickle.load(f)  # nosec B301
             with io.open(os.path.join(
                     model_dir,
                     file_name + "_encoded_all_intents.pkl"), 'rb') as f:
-                encoded_all_intents = pickle.load(f)
+                encoded_all_intents = pickle.load(f)  # nosec B301
 
             return cls(
                 component_config=meta,

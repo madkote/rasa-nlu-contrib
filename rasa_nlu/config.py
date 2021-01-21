@@ -122,8 +122,8 @@ class RasaNLUModelConfig(object):
                     registry.registered_pipeline_templates.keys())
 
                 raise InvalidConfigError("No pipeline specified and unknown "
-                                         "pipeline template '{}' passed. Known "
-                                         "pipeline templates: {}"
+                                         "pipeline template '{}' passed. "
+                                         "Known pipeline templates: {}"
                                          "".format(template_name,
                                                    known_templates))
 

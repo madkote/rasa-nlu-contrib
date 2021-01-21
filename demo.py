@@ -69,7 +69,7 @@ def demo_http_api():
         #
         port=5000,
         loglevel=logging.DEBUG,
-        pre_load= [],
+        pre_load=[],
         endpoints=None,
         config=None,
         max_training_processes=1,

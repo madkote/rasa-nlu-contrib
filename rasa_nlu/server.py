@@ -250,7 +250,7 @@ class RasaNLU(object):
     def get_request_content_type(self, request):
         content_type = request.requestHeaders.getRawHeaders("Content-Type", [])
 
-        if len(content_type) is not 1:
+        if len(content_type) != 1:
             raise Exception("The request must have exactly one content type")
         else:
             return content_type[0]
@@ -391,7 +391,7 @@ def main(args):
     )
 
     logger.info('Started http server on port %s' % args.port)
-    rasa.app.run('0.0.0.0', args.port)
+    rasa.app.run('0.0.0.0', args.port)  # nosec B104
 
 
 if __name__ == '__main__':

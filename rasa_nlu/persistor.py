@@ -85,7 +85,11 @@ class Persistor(object):
         import tempfile
 
         dirpath = tempfile.mkdtemp()
-        base_name = self._tar_name(model_name, project, include_extension=False)
+        base_name = self._tar_name(
+            model_name,
+            project,
+            include_extension=False
+        )
         tar_name = shutil.make_archive(os.path.join(dirpath, base_name),
                                        'gztar',
                                        root_dir=model_directory,

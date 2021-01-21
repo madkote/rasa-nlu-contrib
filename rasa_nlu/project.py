@@ -333,8 +333,10 @@ class Project(object):
                   for model in self._models.keys()
                   if model.startswith(MODEL_NAME_PREFIX)}
         if models:
-            time_list = [datetime.datetime.strptime(parse_time, '%Y%m%d-%H%M%S')
-                         for parse_time, model in models.items()]
+            time_list = [
+                datetime.datetime.strptime(parse_time, '%Y%m%d-%H%M%S')
+                for parse_time, model in models.items()
+            ]
             return models[max(time_list).strftime('%Y%m%d-%H%M%S')]
         else:
             return FALLBACK_MODEL_NAME

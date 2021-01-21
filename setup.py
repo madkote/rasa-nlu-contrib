@@ -202,4 +202,3 @@ setup(
 print('\nWelcome to Rasa NLU Backport!')
 print('If any questions please visit documentation page https://legacy-docs.rasa.com/docs/nlu/')  # noqa E501
 print('or join the community discussions on https://forum.rasa.com')
-

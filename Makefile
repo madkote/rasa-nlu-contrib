@@ -61,11 +61,13 @@ demo-http: clean
 
 flake: clean
 	@echo $@
-	flake8 --statistics --ignore E252 W504 rasa_nlu tests setup.py
+	# flake8 --statistics --ignore E252 --ignore W504 rasa_nlu tests setup.py
+	flake8 --statistics --ignore E252 --ignore W504 demo.py setup.py
 
 bandit: clean
 	@echo $@
-	bandit -r rasa_nlu/ tests/ setup.py
+	#bandit -r rasa_nlu/ tests/ setup.py
+	bandit -r rasa_nlu/ demo.py setup.py
 
 test-unit: clean flake bandit
 	@echo $@

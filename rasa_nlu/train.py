@@ -58,8 +58,8 @@ def create_argument_parser():
                              "a folder like 'model_20171020-160213'")
 
     parser.add_argument('--storage',
-                        help='Set the remote location where models are stored. '
-                             'E.g. on AWS. If nothing is configured, the '
+                        help='Set the remote location where models are stored.'
+                             ' E.g. on AWS. If nothing is configured, the '
                              'server will only serve the models that are '
                              'on disk in the configured `path`.')
 

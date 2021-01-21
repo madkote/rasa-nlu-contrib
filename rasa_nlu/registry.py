@@ -37,7 +37,7 @@ from rasa_nlu.utils.spacy_utils import SpacyNLP
 
 if typing.TYPE_CHECKING:
     from rasa_nlu.components import Component
-    from rasa_nlu.config import RasaNLUModelConfig, RasaNLUModelConfig
+    from rasa_nlu.config import RasaNLUModelConfig, RasaNLUModelConfig  # noqa F811 E501
 
 logger = logging.getLogger(__name__)
 
