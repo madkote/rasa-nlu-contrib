@@ -98,6 +98,17 @@ curl 'localhost:5000/version'
 curl 'localhost:5000/parse?q=hello&project=project_demo&model=nlu'
 ```
 
+### Docker
+```sh
+docker-compose up
+
+curl 'localhost:5000/'
+curl 'localhost:5000/status'
+curl 'localhost:5000/version'
+
+curl 'localhost:5000/parse?q=hello&project=project_demo&model=nlu'
+```
+
 # License
 This project is licensed under the terms of the MIT license.
 Code of Rasa is licensed under the terms of the Apache 2.0 license.

@@ -37,6 +37,7 @@ clean-build:
 	rm --force --recursive *.egg-info
 	rm --force --recursive .pytest_cache/
 	rm --force --recursive demo_models/
+	rm --force --recursive logs/
 
 clean-pycache:
 	@echo $@
@@ -96,3 +97,17 @@ pypi-upload-test: pypi-deps
 pypi-upload: pypi-deps
 	@echo $@
 	python -m twine upload dist/*
+
+docker-build: clean
+	@echo $@
+	DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build --force-rm --no-cache --pull --progress=auto
+
+docker-up: demo
+	@echo $@
+	rm -rf rasa-nlu-contrib-app-data/projects
+	mkdir -p rasa-nlu-contrib-app-data/data
+	mkdir -p rasa-nlu-contrib-app-data/logs
+	mkdir -p rasa-nlu-contrib-app-data/projects
+	mv demo_models/* rasa-nlu-contrib-app-data/projects
+	ls rasa-nlu-contrib-app-data/projects
+	docker-compose --env-file ENV up

@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  rasa-nlu-contrib:
+    image: madkote/rasa_nlu_contrib:latest
+    networks: ['rasa-contrib-network']
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./rasa-nlu-contrib-app-data/projects:/app/projects"
+      - "./rasa-nlu-contrib-app-data/logs:/app/logs"
+      - "./rasa-nlu-contrib-app-data/data:/app/data"
+    build:
+      context: .
+      target: prod
+      dockerfile: Dockerfile
+  duckling:
+    image: rasa/duckling:latest
+    networks: ['rasa-contrib-network']
+    ports:
+      - "8000:8000"
+
+networks: {rasa-contrib-network: {}}
